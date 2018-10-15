@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+
+        <ion-item>
+          <ion-label fixed>Correo electronico</ion-label>
+          <ion-input type="correo" [(ngModel)]="userData.Correo" value=""></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label fixed>Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="userData.Password"></ion-input>
+        </ion-item>
+      
+    </ion-list>
+    <button ion-button color="primary" full (click)="ingresar()">
+      Ingresar
+    </button>
+    <ion-label >¿ No tienes una cuenta ?, Registrate ahora</ion-label>
+    
+    <button ion-button color="light" full>
+        Crear una cuenta
+    </button>
+
+</ion-content>
