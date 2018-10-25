@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { ProductosProvider } from '../../providers/index.providers';
+import { RegistroPrecioPage } from '../index.pages';
 
-/**
- * Generated class for the PrincipalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
+
 
 @IonicPage()
 @Component({
@@ -15,11 +13,49 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PrincipalPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  registroPecio = RegistroPrecioPage;
+
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public app:App,
+              private _prodProvider:ProductosProvider,
+              ) {
+    
+      
+      
+    
+  }
+
+  refrescar(refresh){
+    
+    this._prodProvider.cargar_productos();
+    setTimeout(()=>{
+      refresh.complete();
+    }, 2000);
+    
+  }
+
+  obtener(){
+    // this.items = this.getItems(this.terminoBusqueda);
+  }
+
+  getItems(termino){
+    console.log(termino);
+    // return this.items.filter((item) => {
+    //   return item.title.toLowerCase().indexOf(
+    //     termino.toLowerCase()) > -1;
+    // });
+     
+    
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PrincipalPage');
+    
   }
-
+  
+  ionViewDidEnter() {
+    
+   }
+   
 }

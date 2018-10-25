@@ -6,8 +6,8 @@ import {  IonicPage,
           AlertController
 } from 'ionic-angular';
 
-import { PrincipalPage } from "../index.pages";
-import { LoginProvider } from "../../providers/index.providers";
+import { TabsPage } from "../index.pages";
+import { LoginProvider, StorageLocalProvider } from "../../providers/index.providers";
 
 @IonicPage()
 @Component({
@@ -25,7 +25,8 @@ export class LoginPage {
               public navParams: NavParams,
               private _auth:LoginProvider,
               public loadingCtrl: LoadingController,
-              public alertCtrl: AlertController
+              public alertCtrl: AlertController,
+              public _storage:StorageLocalProvider
               ) {
   }
   
@@ -36,7 +37,7 @@ export class LoginPage {
     //mostramos el loading
     loader.present();
     
-    console.log(this.userData);
+    
     //nos conectamos con el servicio de Login y usamos el metodo autenticar, pasamos 
     //por parametro la data del usuario y como nos regresa una promesa,
     //evaluamos la promesa con el then en el cual obtenemos un resultado
@@ -47,7 +48,9 @@ export class LoginPage {
       //evaluamos si la respuesta fue verdadera o falsa
       if(result['response']){
         //Si se autentico definimos la pagina principal como la siguiente a mostrar
-        this.navCtrl.setRoot(PrincipalPage);
+        // this.navCtrl.setRoot(PrincipalPage);
+        this._storage.guardarStorage("logueado",true);
+        this.navCtrl.setRoot(TabsPage);
 
       }else{
         //si presento un problema cargamos en el atributo mensaje el error que regreso el servicio

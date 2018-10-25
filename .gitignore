@@ -30,6 +30,7 @@ plugins/ios.json
 www/
 $RECYCLE.BIN/
 
+#Ignorar package json
 package-lock.json
 
 .DS_Store

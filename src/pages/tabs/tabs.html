@@ -1,18 +1,6 @@
-<!--
-  Generated template for the TabsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>tabs</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+<ion-tabs color="primary">
+    <ion-tab tabIcon="home" tabTitle="Inicio" [root]="tab1"></ion-tab>
+  <ion-tab tabIcon="search" tabTitle="Buscar" [root]="tab3"></ion-tab>
+  <ion-tab tabIcon="person" tabTitle="Mi cuenta"  [root]="tab2"></ion-tab>
+  <ion-tab tabIcon="close-circle" tabTitle="Salir" (ionSelect)="salir()"></ion-tab>
+</ion-tabs>

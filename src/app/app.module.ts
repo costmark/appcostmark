@@ -10,6 +10,10 @@ import { MyApp } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { IonicStorageModule } from '@ionic/storage';
+
+
+
 
 //Import de todas las paginas 
 import { 
@@ -17,15 +21,20 @@ import {
   FiltrosPage,
   PerfilusuarioPage,
   LoginPage,
-  TabsPage
+  TabsPage,
+  BusquedaPage,
+  ResultadoBusquedaPage,
+  RegistroPrecioPage
  } from "../pages/index.pages";
 
  //Import de todos los providers
  import { 
       LoginProvider,
       ProductosProvider,
-      UsuarioProvider 
+      UsuarioProvider,
+      StorageLocalProvider 
 } from "../providers/index.providers";
+
 
 
 @NgModule({
@@ -35,11 +44,15 @@ import {
     FiltrosPage,
     PerfilusuarioPage,
     LoginPage,
-    TabsPage
+    TabsPage,
+    BusquedaPage,
+    ResultadoBusquedaPage,
+    RegistroPrecioPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     HttpClientModule
   ],
   bootstrap: [IonicApp],
@@ -49,7 +62,10 @@ import {
     FiltrosPage,
     PerfilusuarioPage,
     LoginPage,
-    TabsPage
+    TabsPage,
+    BusquedaPage,
+    ResultadoBusquedaPage,
+    RegistroPrecioPage
   ],
   providers: [
     StatusBar,
@@ -57,7 +73,8 @@ import {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginProvider,
     UsuarioProvider,
-    ProductosProvider
+    ProductosProvider,
+    StorageLocalProvider
   ]
 })
 export class AppModule {}

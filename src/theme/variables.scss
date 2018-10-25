@@ -33,12 +33,25 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
+//Colors original ionic
+// $colors: (
+//   primary:    #488aff,
+//   secondary:  #32db64,
+//   danger:     #f53d3d,
+//   light:      #f4f4f4,
+//   dark:       #222
+// );
+
+//Color CostMark
+
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
+  dark-primary:#303F9F,
+  primary:    #263238,
+  secondary:  #f53d3d,
   danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  light:      #C5CAE9,
+  dark:       #222,
+  divider:#BDBDBD
 );
 
 

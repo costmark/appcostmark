@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the TabsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {  PerfilusuarioPage,
+          PrincipalPage, 
+          LoginPage,
+          BusquedaPage 
+} from "../index.pages";
+import { UsuarioProvider } from '../../providers/usuario/usuario';
+
+
+
 
 @IonicPage()
 @Component({
@@ -15,11 +18,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TabsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  tab1 = PrincipalPage;
+  tab2 = PerfilusuarioPage;
+  tab3 = BusquedaPage;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _usrProvider:UsuarioProvider) {
+     
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TabsPage');
-  }
+  salir(){
+    this._usrProvider.cerrarSesion();
+    this.navCtrl.setRoot(LoginPage)
+    
+  }  
 
 }

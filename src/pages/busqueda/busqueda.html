@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Buscar Productos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-searchbar (ionInput)="buscar_productos($event)"
+                    placeholder="Buscar por producto o marca" 
+                    >
+    </ion-searchbar>
+    <ion-list>
+        <ion-item *ngFor="let item of _prodProvider.productos_filtrados"
+                  [navPush]="resultadoBusqueda"
+                  [navParams]="{ producto:item }">
+          <h2> {{ item.nombre_producto }} </h2>
+          <h3>{{item.presentacion_producto}}</h3>
+          <p>{{item.nombre_marca}}</p> 
+        </ion-item>
+    </ion-list>
+
+
+</ion-content>
