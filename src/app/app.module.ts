@@ -32,8 +32,10 @@ import {
       LoginProvider,
       ProductosProvider,
       UsuarioProvider,
-      StorageLocalProvider 
+      StorageLocalProvider ,
+      AlmacenesProvider
 } from "../providers/index.providers";
+
 
 
 
@@ -74,7 +76,8 @@ import {
     LoginProvider,
     UsuarioProvider,
     ProductosProvider,
-    StorageLocalProvider
+    StorageLocalProvider,
+    AlmacenesProvider
   ]
 })
 export class AppModule {}

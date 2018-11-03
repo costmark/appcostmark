@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlmacenesProvider, ProductosProvider } from '../../providers/index.providers';
 
-/**
- * Generated class for the RegistroPrecioPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,7 +10,34 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegistroPrecioPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  almacen:string = "";
+  puntoventa:string = "";
+  producto:string = "";
+  costo:number = 0;
+  
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              public _alm:AlmacenesProvider,
+              public _prod:ProductosProvider) {   
+           
+
+  }
+  
+  obtenerPuntoVenta(){  
+    this._alm.puntoVenta(this.almacen);
+  }
+
+  registrar(){
+    let data = {
+      fecha_pventa:"",
+      costo_pventa:this.costo,
+      id_producto:this.producto,
+      id_usuario:"",
+      id_puntoventa:this.puntoventa
+    }
+    console.log(data);
+    
+    
   }
 
   ionViewDidLoad() {

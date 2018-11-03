@@ -50,6 +50,7 @@ export class LoginPage {
         //Si se autentico definimos la pagina principal como la siguiente a mostrar
         // this.navCtrl.setRoot(PrincipalPage);
         this._storage.guardarStorage("logueado",true);
+        this._storage.guardarStorage("key",result['result']);
         this.navCtrl.setRoot(TabsPage);
 
       }else{

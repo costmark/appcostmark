@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
-import { ProductosProvider } from '../../providers/index.providers';
+import { ProductosProvider, StorageLocalProvider } from '../../providers/index.providers';
 import { RegistroPrecioPage } from '../index.pages';
 
 
@@ -20,10 +20,11 @@ export class PrincipalPage {
               public navParams: NavParams, 
               public app:App,
               private _prodProvider:ProductosProvider,
+              private _str:StorageLocalProvider
               ) {
     
       
-      
+      this.getDataToken();
     
   }
 
@@ -48,6 +49,24 @@ export class PrincipalPage {
     // });
      
     
+  }
+  getDataToken(){
+    let token;
+    this._str.consultarStorage("key").then(res =>{
+      token = res;
+      
+      console.log(token);
+
+    })
+
+    
+    
+    
+    // let jwtData = token.split('.')[1]
+    // console.log(jwtData);
+    
+    // let decodedJwtJsonData = window.atob(jwtData)
+    // let decodedJwtData = JSON.parse(decodedJwtJsonData)
   }
 
   ionViewDidLoad() {
