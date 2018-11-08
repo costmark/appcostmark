@@ -1,3 +1,4 @@
+export { CrearCuentaPage } from "./crear-cuenta/crear-cuenta";
 export { RegistroPrecioPage } from "./registro-precio/registro-precio";
 export { ResultadoBusquedaPage } from "./resultado-busqueda/resultado-busqueda";
 export { BusquedaPage } from "./busqueda/busqueda";

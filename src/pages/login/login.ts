@@ -3,10 +3,11 @@ import {  IonicPage,
           NavController, 
           NavParams, 
           LoadingController,
-          AlertController
+          AlertController,
+          ModalController
 } from 'ionic-angular';
 
-import { TabsPage } from "../index.pages";
+import { TabsPage, CrearCuentaPage } from "../index.pages";
 import { LoginProvider, StorageLocalProvider } from "../../providers/index.providers";
 
 @IonicPage()
@@ -26,37 +27,31 @@ export class LoginPage {
               private _auth:LoginProvider,
               public loadingCtrl: LoadingController,
               public alertCtrl: AlertController,
-              public _storage:StorageLocalProvider
+              public _storage:StorageLocalProvider,
+              public modalCtrl: ModalController
               ) {
   }
   
   //Metodo para autenticar usuarios en la aplicación
   ingresar(){
-    //Instanciamos el loading para poder hacer un uso personalizado
+
     let loader = this.loading();
-    //mostramos el loading
     loader.present();
-    
-    
-    //nos conectamos con el servicio de Login y usamos el metodo autenticar, pasamos 
-    //por parametro la data del usuario y como nos regresa una promesa,
-    //evaluamos la promesa con el then en el cual obtenemos un resultado
+
     this._auth.autenticar(this.userData).then((result)=>{
-      //Una vez se resuelve la consulta, cerramos el loading
+
       loader.dismiss();
-      
-      //evaluamos si la respuesta fue verdadera o falsa
+
       if(result['response']){
-        //Si se autentico definimos la pagina principal como la siguiente a mostrar
-        // this.navCtrl.setRoot(PrincipalPage);
+
         this._storage.guardarStorage("logueado",true);
+        this._storage.guardarStorage("mail", this.userData.Correo);
         this._storage.guardarStorage("key",result['result']);
         this.navCtrl.setRoot(TabsPage);
 
       }else{
-        //si presento un problema cargamos en el atributo mensaje el error que regreso el servicio
+
         this.msg = result['message'];
-        //Mostramos el error en un mensaje de alerta
         this.alerta().present();
       }
       
@@ -86,8 +81,14 @@ export class LoginPage {
     
   }
 
+  crearCuenta(){
+    let profileModal = this.modalCtrl.create(CrearCuentaPage);
+
+    profileModal.present();
+  }
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    
   }
 
 }

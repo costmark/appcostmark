@@ -51,22 +51,13 @@ export class PrincipalPage {
     
   }
   getDataToken(){
-    let token;
+    let token:any;
     this._str.consultarStorage("key").then(res =>{
       token = res;
       
-      console.log(token);
 
     })
 
-    
-    
-    
-    // let jwtData = token.split('.')[1]
-    // console.log(jwtData);
-    
-    // let decodedJwtJsonData = window.atob(jwtData)
-    // let decodedJwtData = JSON.parse(decodedJwtJsonData)
   }
 
   ionViewDidLoad() {

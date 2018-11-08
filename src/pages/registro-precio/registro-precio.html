@@ -18,15 +18,15 @@
         </ion-item>
         <ion-item>
             <ion-label>Punto de venta</ion-label>
-            <ion-select [(ngModel)]="puntoventa" [disabled]="almacen.length < 0">
-              <ion-option value=" {{pventa.id_puntoventa}} " *ngFor="let pventa of _alm.lista_punventa"> {{pventa.nombre_puntoventa}} - {{pventa.direccion_puntoventa}} </ion-option>
+            <ion-select [(ngModel)]="puntoventa" [disabled]="almacen.length <=  0">
+              <ion-option value="{{pventa.id_puntoventa}}" *ngFor="let pventa of _alm.lista_punventa"> {{pventa.nombre_puntoventa}} - {{pventa.direccion_puntoventa}} </ion-option>
               
             </ion-select>
           </ion-item>
         <ion-item>
-            <ion-label>Seleccione el producto</ion-label>
+            <ion-label>Producto</ion-label>
             <ion-select [(ngModel)]="producto">
-              <ion-option value=" {{producto.id_producto}} " *ngFor="let producto of _prod.todos_productos"> {{producto.nombre_producto}} - {{producto.presentacion_producto}} - {{producto.nombre_marca}} </ion-option>
+              <ion-option value="{{producto.id_producto}}" *ngFor="let producto of _prod.todos_productos"> {{producto.nombre_producto}} - {{producto.presentacion_producto}} - {{producto.nombre_marca}} </ion-option>
               
             </ion-select>
           </ion-item>
@@ -34,7 +34,7 @@
           <ion-item>
               <ion-icon name="cash" item-start></ion-icon>
               <ion-label floating>Valor del producto</ion-label>
-              <ion-input type="text" [(ngModel)]="costo"></ion-input>
+              <ion-input type="number" [(ngModel)]="costo" min="0" max="1000000"></ion-input>
               
           </ion-item>
     </ion-list>

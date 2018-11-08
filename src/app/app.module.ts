@@ -24,7 +24,8 @@ import {
   TabsPage,
   BusquedaPage,
   ResultadoBusquedaPage,
-  RegistroPrecioPage
+  RegistroPrecioPage,
+  CrearCuentaPage
  } from "../pages/index.pages";
 
  //Import de todos los providers
@@ -33,8 +34,10 @@ import {
       ProductosProvider,
       UsuarioProvider,
       StorageLocalProvider ,
-      AlmacenesProvider
+      AlmacenesProvider,
+      PrecioventaProvider
 } from "../providers/index.providers";
+
 
 
 
@@ -49,7 +52,8 @@ import {
     TabsPage,
     BusquedaPage,
     ResultadoBusquedaPage,
-    RegistroPrecioPage
+    RegistroPrecioPage,
+    CrearCuentaPage
   ],
   imports: [
     BrowserModule,
@@ -67,7 +71,8 @@ import {
     TabsPage,
     BusquedaPage,
     ResultadoBusquedaPage,
-    RegistroPrecioPage
+    RegistroPrecioPage,
+    CrearCuentaPage
   ],
   providers: [
     StatusBar,
@@ -77,7 +82,8 @@ import {
     UsuarioProvider,
     ProductosProvider,
     StorageLocalProvider,
-    AlmacenesProvider
+    AlmacenesProvider,
+    PrecioventaProvider
   ]
 })
 export class AppModule {}

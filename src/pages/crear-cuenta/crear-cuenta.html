@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Crear nueva cuenta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+        <ion-label floating>Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Correo</ion-label>
+        <ion-input type="email" [(ngModel)]="correo" ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="contrasena" ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Confirmar Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="confcontrasena" ></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button full color="primary" (click)="registrar()" [disabled]="contrasena.length < 5 && confcontrasena.length < 5 ">
+      Crear cuenta
+  </button>
+  <button ion-button full color="secondary" (click)="cancelar()">
+      Cancelar
+  </button>
+
+</ion-content>

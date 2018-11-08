@@ -7,7 +7,7 @@ import { Storage } from '@ionic/storage';
 export class StorageLocalProvider {
 
   constructor(private str:Storage, private platform:Platform) {
-    console.log('Hello StorageLocalProvider Provider');
+    
   }
 
   guardarStorage(key:string, data:any){
