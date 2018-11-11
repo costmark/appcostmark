@@ -25,7 +25,8 @@ import {
   BusquedaPage,
   ResultadoBusquedaPage,
   RegistroPrecioPage,
-  CrearCuentaPage
+  CrearCuentaPage,
+  ReferenciasPage
  } from "../pages/index.pages";
 
  //Import de todos los providers
@@ -53,7 +54,8 @@ import {
     BusquedaPage,
     ResultadoBusquedaPage,
     RegistroPrecioPage,
-    CrearCuentaPage
+    CrearCuentaPage,
+    ReferenciasPage
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,8 @@ import {
     BusquedaPage,
     ResultadoBusquedaPage,
     RegistroPrecioPage,
-    CrearCuentaPage
+    CrearCuentaPage,
+    ReferenciasPage
   ],
   providers: [
     StatusBar,

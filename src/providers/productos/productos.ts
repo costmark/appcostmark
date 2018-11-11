@@ -41,6 +41,7 @@ export class ProductosProvider {
     let url = URL_SERVICIOS+"pventa/buscarpv/"+id_producto;
 
     this.http.get(url).subscribe(res =>{
+      console.log(res);
       
       this.precioventa_productos = res['result'];
     })

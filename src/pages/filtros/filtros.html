@@ -10,6 +10,24 @@
 
 <ion-content padding>
 
+  <ion-list>
+    <ion-item>
+        <ion-label>Almacen </ion-label>
+        <ion-select [(ngModel)]="almacen">
+          <ion-option value="{{item.nombre_almacen}}" *ngFor="let item of _alm.lista_almacenes">{{item.nombre_almacen}} </ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label>Localizacion </ion-label>
+        <ion-select [(ngModel)]="localizacion">
+          <ion-option value="NORTE">Norte</ion-option>
+          <ion-option value="SUR">Sur</ion-option>
+          <ion-option value="ORIENTE">Oriente</ion-option>
+          <ion-option value="OCCIDENTE">Occidente</ion-option>
+        </ion-select>
+    </ion-item>
+  </ion-list>
+
   <button ion-button color="secondary" (click)="cerrarmodal()" full>
     Aplicar filtro
   </button>

@@ -1,3 +1,5 @@
+export { ReferenciasPage } from "./referencias/referencias";
+
 export { CrearCuentaPage } from "./crear-cuenta/crear-cuenta";
 export { RegistroPrecioPage } from "./registro-precio/registro-precio";
 export { ResultadoBusquedaPage } from "./resultado-busqueda/resultado-busqueda";
@@ -7,4 +9,5 @@ export { FiltrosPage } from "./filtros/filtros";
 export { LoginPage } from "./login/login";
 export { PerfilusuarioPage } from "./perfilusuario/perfilusuario";
 export { TabsPage } from "./tabs/tabs";
+
 

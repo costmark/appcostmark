@@ -3,7 +3,9 @@
 
   <ion-navbar color="secondary">
     <ion-title>Precios de venta</ion-title>
+      
   </ion-navbar>
+
 
 </ion-header>
 
@@ -13,7 +15,7 @@
   <ion-list>
     <ion-item *ngFor="let item of _prodProvider.precioventa_productos">
         <h2>{{item.nombre_producto}} - {{item.presentacion_producto}} </h2>
-        <h3>{{item.nombre_almacen}} - {{item.nombre_puntoventa}}</h3>
+        <h3>{{item.nombre_almacen}} - {{item.nombre_puntoventa}} - {{item.localizacion_puntoventa}} </h3>
         <p>Fecha de registro: {{item.fecha_pventa}} </p>
         <ion-badge item-end>{{item.costo_pventa | currency:'COP':'symbol-narrow'}}</ion-badge>
         

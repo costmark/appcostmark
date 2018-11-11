@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, AlertController} from 'ionic-angular';
 import { StorageLocalProvider, UsuarioProvider } from '../../providers/index.providers';
+import { ReferenciasPage } from '../index.pages';
+
 
 @IonicPage()
 @Component({
@@ -8,6 +10,8 @@ import { StorageLocalProvider, UsuarioProvider } from '../../providers/index.pro
   templateUrl: 'perfilusuario.html',
 })
 export class PerfilusuarioPage {
+
+  referencias = ReferenciasPage;
 
   nombre:string;
   correo:string;

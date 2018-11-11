@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { ProductosProvider, StorageLocalProvider } from '../../providers/index.providers';
-import { RegistroPrecioPage } from '../index.pages';
+import { RegistroPrecioPage,ReferenciasPage } from '../index.pages';
 
 
 
@@ -13,7 +13,7 @@ import { RegistroPrecioPage } from '../index.pages';
 })
 export class PrincipalPage {
 
-
+  referencias = ReferenciasPage;
   registroPecio = RegistroPrecioPage;
 
   constructor(public navCtrl: NavController, 
@@ -51,9 +51,9 @@ export class PrincipalPage {
     
   }
   getDataToken(){
-    let token:any;
+    
     this._str.consultarStorage("key").then(res =>{
-      token = res;
+      let token:any = res;
       
 
     })

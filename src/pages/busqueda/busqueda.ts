@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProductosProvider } from '../../providers/index.providers';
-import { ResultadoBusquedaPage } from '../index.pages';
+import { ResultadoBusquedaPage, ReferenciasPage } from '../index.pages';
 
 
 
@@ -12,6 +12,7 @@ import { ResultadoBusquedaPage } from '../index.pages';
 })
 export class BusquedaPage {
 
+  referencias = ReferenciasPage;
   resultadoBusqueda = ResultadoBusquedaPage;
 
   constructor(public navCtrl: NavController, 

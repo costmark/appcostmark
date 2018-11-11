@@ -8,6 +8,12 @@ import { AlmacenesProvider, ProductosProvider, UsuarioProvider, StorageLocalProv
   selector: 'page-registro-precio',
   templateUrl: 'registro-precio.html',
 })
+
+/* Comentario */
+/* Comentado por: David Zambrano */
+/* Esta clase interactua con la vista de registrar precio y es la encargada junto con todos sus metodos,
+  de controlar que el registro de precio sea exitoso o emitir un mensaje cuando no lo fue.*/
+
 export class RegistroPrecioPage {
 
   almacen:string = "";

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController  } from 'ionic-angular';
+import { AlmacenesProvider } from '../../providers/index.providers';
 
 
 @IonicPage()
@@ -10,10 +11,15 @@ import { IonicPage, NavController, NavParams, ViewController  } from 'ionic-angu
 export class FiltrosPage {
 
   data:{} = {};
+  almacen:string;
+  localizacion:string;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
-              public viewCtrl: ViewController) {
+              public viewCtrl: ViewController,
+              public _alm:AlmacenesProvider) {
+
+                
   }
 
   ionViewDidLoad() {
@@ -22,7 +28,8 @@ export class FiltrosPage {
 
   cerrarmodal(){
     this.data = {
-      'nombre_almacen':'ALKOSTO'
+      'nombre_almacen':this.almacen,
+      'clasificacion_pventa':this.localizacion
     }
     this.viewCtrl.dismiss(this.data);
   }
